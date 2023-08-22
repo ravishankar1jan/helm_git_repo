@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: NameSpace
+metadata:
+  name: dev
+  labels:
+    manager: Team-A
+    account: Mazda
