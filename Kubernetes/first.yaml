@@ -3,6 +3,10 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: myapp
+  labels:
+    env: Development
+    dpt: Account
+
 spec:
   containers:
   - name: first
