@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: testing-set
+spec:
+  selector:  
+   matchExpressions:  #Set based seletor
+   - key: app
+     operator: In
+     values: 
+     - web       # app = web or app = nginx however if existing pod nginx will be delete it will create new pod with label defined in labels app: web and tier: fend
+     - nginx
+  replicas: 5
+  template:
+    metadata:
+     labels:
+       app: web
+       tier: fend
+    spec:
+      containers:
+        - name: web
+          image:  nginx

@@ -1,0 +1,5 @@
+ - There are three kind of service type in kubernetes
+ 	- ClusterIP => Internally used #kubectl expose rs <replicasetname> --target-port=80 --port=5000
+  	- NodePort => To expose public ip of any one worker/mster node (Port Number 30000-32767)/security issue/need to enable port in the firewall if we are using onprem environment
+	- LoadBalancer => By default it's in pending when on cloud and it may take some time to populate ip		if there is multiple application we need to have multiple public ip which is constly solution.
+	 Better solution is to use ingress
